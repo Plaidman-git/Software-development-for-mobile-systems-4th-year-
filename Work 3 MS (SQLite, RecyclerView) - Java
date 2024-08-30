@@ -1,0 +1,1205 @@
+Листинг файла манифеста проекта:
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Lab3"
+        tools:targetApi="31">
+        <activity
+            android:name=".AddEditActivity"
+            android:label="@string/adding"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:label="@string/label">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+    </application>
+</manifest>
+
+Листинг файла строковых констант strings.xml:
+<resources>
+    <string name="app_name">Реестр</string>
+    <string name="label">Реестр ЭВМ кафедры</string>
+    <string name="c_id">id</string>
+    <string name="c_number">number</string>
+    <string name="c_count">count</string>
+    <string name="c_specifications">specifications</string>
+    <string name="computer_number">№ аудитории</string>
+    <string name="computer_count">Количество ЭВМ</string>
+    <string name="computer_specifications">Характеристики ЭВМ</string>
+    <string name="computer_n">1</string>
+    <string name="number">"№ ауд. "</string>
+    <string name="count">"Количество ЭВМ: "</string>
+    <string name="specifications">"Характеристики ЭВМ: "</string>
+    <string name="adding">Добавление записи</string>
+    <string name="editing">Редактирование записи</string>
+    <string name="deleting">Удаление</string>
+    <string name="save">Сохранить</string>
+    <string name="delete_note">Удалить запись?</string>
+    <string name="delete_all_notes">Удалить все записи?</string>
+    <string name="yes">Да, удалить</string>
+    <string name="no">Отмена</string>
+    <string name="no_notes">записей нет</string>
+    <string name="success_add">Новая запись успешно добавлена!</string>
+    <string name="success_edit">Запись успешно обновлена!</string>
+    <string name="success_delete">Запись успешно удалена!</string>
+    <string name="success_delete_all">Все записи успешно удалены!</string>
+    <string name="error_add">Ошибка при добавлении новой записи!</string>
+    <string name="error_edit">Ошибка обновления!!!</string>
+    <string name="error_delete">Ошибка удаления!</string>
+    <string name="error">Ошибка!!!</string>
+    <string name="ok">OK</string>
+    <string name="cancel">ОТМЕНА</string>
+    <string name="empty"> </string>
+    <string name="delete">Удалить</string>
+    <string name="warning">Пожалуйста, заполните все поля!</string>
+</resources>
+
+Листинг файла цветовых констант colors.xml:
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="blue_1">#063C93</color>
+    <color name="primary">#052D6E</color>
+    <color name="blue_2">#0742A3</color>
+    <color name="dark_blue">#063787</color>
+    <color name="button">#104BA9</color>
+    <color name="button_n">#94BFFD</color>
+    <color name="black">#4C4949</color>
+    <color name="black1">#EE9E8D83</color>
+    <color name="white">#FFFFFF</color>
+    <color name="bg">#C9DEFF</color>
+    <color name="bg_n">#799FD8</color>
+    <color name="text">#052D6E</color>
+    <color name="text_n">#07337A</color>
+    <color name="buttontext">#FBF9FB</color>
+    <color name="buttontext_n">#000000</color>
+    <color name="button_fill_color">#184B98</color>
+    <color name="button_fill_color_n">#000000</color>
+    <color name="button_color">#FFFFFF</color>
+    <color name="button_color_n">#000000</color>
+    <color name="addcolor">#244473</color>
+    <color name="addcolor_n">#000000</color>
+</resources>
+
+Листинг файла светлой темы:
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.Lab3" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryVariant">@color/blue_2</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/blue_1</item>
+        <item name="colorSecondaryVariant">@color/button</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <!-- Цвет текста -->
+        <item name="android:textColor">@color/text</item>
+        <!-- Цвет фона для светлой темы -->
+        <item name="android:windowBackground">@color/bg</item>
+        <!-- Цвет фона для кнопок -->
+        <item name="button_bg">@color/button</item>
+        <!-- Цвет текста для кнопок -->
+        <item name="button_text">@color/buttontext</item>
+        <!-- Текст дополнительного цвета -->
+        <item name="special_textcolor">@color/addcolor</item>
+        <item name="button_fill_color">@color/button_fill_color</item>
+        <item name="button_color">@color/button_color</item>
+    </style>
+</resources>
+
+Листинг файла темной темы:
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.Lab3" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/text_n</item>
+        <item name="colorPrimaryVariant">@color/blue_2</item>
+        <item name="colorOnPrimary">@color/black</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/dark_blue</item>
+        <item name="colorSecondaryVariant">@color/button_n</item>
+        <item name="colorOnSecondary">#737373</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">@color/text_n</item>
+        <!-- Цвет текста -->
+        <item name="android:textColor">@color/text_n</item>
+        <!-- Цвет фона для темной темы -->
+        <item name="android:windowBackground">@color/bg_n</item>
+        <!-- Цвет фона для кнопок -->
+        <item name="button_bg">@color/button_n</item>
+        <!-- Цвет текста для кнопок -->
+        <item name="button_text">@color/buttontext_n</item>
+        <!-- Текст дополнительного цвета -->
+        <item name="special_textcolor">@color/addcolor_n</item>
+        <item name="button_fill_color">@color/button_fill_color_n</item>
+        <item name="button_color">@color/button_color_n</item>
+    </style>
+</resources>
+
+
+Разметка макетов графических интерфейсов
+activity_main.xml:
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="?android:attr/windowBackground">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/MainList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/AddBtn"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="16dp"
+        android:background="@drawable/add"
+        android:backgroundTint="?attr/button_bg"
+        app:tint="?attr/button_color"
+        android:src="@drawable/add"
+        app:fabCustomSize="70dp"
+        app:maxImageSize="30dp"
+        app:layout_constraintBottom_toBottomOf="@+id/MainList"
+        app:layout_constraintEnd_toEndOf="@+id/MainList"
+        android:clickable="true"
+        android:focusable="true" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/DelAllBtn"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="16dp"
+        android:layout_marginStart="16dp"
+        android:backgroundTint="?attr/button_bg"
+        android:clickable="true"
+        android:focusable="true"
+        android:src="@drawable/delall"
+        app:fabCustomSize="70dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:maxImageSize="30dp"
+        app:tint="?attr/button_color" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+Листинг activity_add_edit.xml:
+Вертикальная ориентация activity_add_edit.xml:
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10sp"
+    tools:context=".AddEditActivity"
+    android:background="?android:attr/windowBackground">
+
+    <EditText
+        android:id="@+id/etNumber"
+        android:layout_width="330dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="340dp"
+        android:ems="10"
+        android:fontFamily="@font/droid_sans_bold"
+        android:hint="@string/computer_number"
+        android:inputType="number"
+        android:textColor="?android:attr/textColor"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.53"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/etCount"
+        android:layout_width="330dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:fontFamily="@font/droid_sans_bold"
+        android:gravity="start|top"
+        android:hint="@string/computer_count"
+        android:inputType="number"
+        android:textColor="?android:attr/textColor"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.512"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etNumber" />
+
+    <EditText
+        android:id="@+id/etSpecifications"
+        android:layout_width="330dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:fontFamily="@font/droid_sans_bold"
+        android:hint="@string/computer_specifications"
+        android:inputType="text"
+        android:textColor="?android:attr/textColor"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.53"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etCount" />
+
+    <Button
+        android:id="@+id/saveBtn"
+        android:layout_width="335dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="32dp"
+        android:backgroundTint="?attr/button_bg"
+        android:fontFamily="@font/droid_sans_bold"
+        android:onClick="saveBtnClick"
+        android:text="@string/save"
+        android:textColor="?attr/button_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etSpecifications" />
+
+    <Button
+        android:id="@+id/delBtn"
+        android:layout_width="335dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="38dp"
+        android:backgroundTint="?attr/button_bg"
+        android:drawableTintMode="add"
+        android:fontFamily="@font/droid_sans_bold"
+        android:foregroundTintMode="add"
+        android:onClick="delBtnClick"
+        android:text="@string/delete"
+        android:textColor="?attr/button_text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.46"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/saveBtn"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="317dp"
+        android:layout_height="249dp"
+        android:layout_marginTop="42dp"
+        app:layout_constraintBottom_toTopOf="@+id/etNumber"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/registry" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+Горизонтальная ориентация activity_add_edit.xml:
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10sp"
+    tools:context=".AddEditActivity"
+    android:background="?android:attr/windowBackground">
+
+
+    <EditText
+        android:id="@+id/etNumber"
+        android:layout_width="335dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="32dp"
+        android:ems="10"
+        android:fontFamily="@font/droid_sans_bold"
+        android:hint="@string/computer_number"
+        android:inputType="number"
+        android:textColor="?android:attr/textColor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.906"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/etCount"
+        android:layout_width="335dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="4dp"
+        android:ems="10"
+        android:fontFamily="@font/droid_sans_bold"
+        android:gravity="start|top"
+        android:hint="@string/computer_count"
+        android:inputType="number"
+        android:textColor="?android:attr/textColor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.907"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etNumber" />
+
+    <EditText
+        android:id="@+id/etSpecifications"
+        android:layout_width="335dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="4dp"
+        android:ems="10"
+        android:fontFamily="@font/droid_sans_bold"
+        android:hint="@string/computer_specifications"
+        android:inputType="text"
+        android:textColor="?android:attr/textColor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.907"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etCount" />
+
+    <Button
+        android:id="@+id/saveBtn"
+        android:layout_width="335dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="36dp"
+        android:backgroundTint="?attr/button_bg"
+        android:fontFamily="@font/droid_sans_bold"
+        android:onClick="saveBtnClick"
+        android:text="@string/save"
+        android:textColor="?attr/button_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etSpecifications" />
+
+    <Button
+        android:id="@+id/delBtn"
+        android:layout_width="335dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="36dp"
+        android:backgroundTint="?attr/button_bg"
+        android:drawableTintMode="add"
+        android:fontFamily="@font/droid_sans_bold"
+        android:foregroundTintMode="add"
+        android:onClick="delBtnClick"
+        android:text="@string/delete"
+        android:textColor="?attr/button_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/saveBtn" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="306dp"
+        android:layout_height="227dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.358"
+        app:srcCompat="@drawable/registry" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+Листинг my_row.xml:
+Вертикальная ориентация my_row.xml:
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?android:attr/windowBackground"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="1dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/windowBackground"
+            android:padding="5sp">
+
+            <TextView
+                android:id="@+id/computer_id_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:textColor="?android:attr/textColor"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.217" />
+
+            <TextView
+                android:id="@+id/computer_n_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:fontFamily="@font/droid_sans_bold"
+                android:text="@string/computer_n"
+                android:textColor="?android:attr/textColor"
+                android:textSize="27sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.558" />
+
+            <TextView
+                android:id="@+id/computer_number_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:fontFamily="@font/droid_sans_bold"
+                android:text="@string/computer_number"
+                android:textColor="?android:attr/textColor"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/computer_count_txt"
+                style="@style/Theme.Lab3"
+                android:layout_width="353dp"
+                android:layout_height="22dp"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/droid_sans_bold"
+                android:maxLines="1"
+                android:text="@string/computer_count"
+                android:textColor="?attr/special_textcolor"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.616"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/computer_number_txt" />
+
+
+            <ImageButton
+                android:id="@+id/delBtnRV"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_marginTop="4dp"
+                android:background="@null"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.956"
+                app:layout_constraintStart_toEndOf="@+id/computer_number_txt"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/del"
+                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+            <TextView
+                android:id="@+id/computer_specifications_txt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/droid_sans_bold"
+                android:text="@string/computer_specifications"
+                android:textColor="?attr/special_textcolor"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/computer_count_txt" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>
+
+Горизонтальная ориентация my_row.xml:
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/mainLayout"
+    android:background="?android:attr/windowBackground">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="1dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="?android:attr/windowBackground"
+            android:padding="5sp">
+
+            <TextView
+                android:id="@+id/computer_id_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:textColor="?android:attr/textColor"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.178" />
+
+            <TextView
+                android:id="@+id/computer_n_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:fontFamily="@font/droid_sans_bold"
+                android:text="@string/computer_n"
+                android:textColor="?android:attr/textColor"
+                android:textSize="31sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.545" />
+
+            <TextView
+                android:id="@+id/computer_number_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/droid_sans_bold"
+                android:text="@string/computer_number"
+                android:textAlignment="center"
+                android:textColor="?android:attr/textColor"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.484"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/computer_count_txt"
+                style="@style/Theme.Lab3"
+                android:layout_width="352dp"
+                android:layout_height="22dp"
+                android:layout_marginStart="26dp"
+                android:layout_marginTop="6dp"
+                android:fontFamily="@font/droid_sans_bold"
+                android:maxLines="1"
+                android:text="@string/computer_count"
+                android:textColor="?attr/special_textcolor"
+                android:textSize="16sp"
+                app:layout_constraintStart_toEndOf="@+id/computer_n_txt"
+                app:layout_constraintTop_toBottomOf="@+id/computer_number_txt" />
+
+
+            <ImageButton
+                android:id="@+id/delBtnRV"
+                android:layout_width="38dp"
+                android:layout_height="33dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="10dp"
+                android:background="@null"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.976"
+                app:layout_constraintStart_toEndOf="@+id/computer_number_txt"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/del"
+                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+            <TextView
+                android:id="@+id/computer_specifications_txt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="26dp"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/droid_sans_bold"
+                android:text="@string/computer_specifications"
+                android:textColor="?attr/special_textcolor"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/computer_n_txt"
+                app:layout_constraintTop_toBottomOf="@+id/computer_count_txt" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>
+
+Листинг addAditActivity.Java:
+package com.ComputerRegistry;
+
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import android.content.DialogInterface;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+import android.graphics.Typeface;
+import androidx.core.content.res.ResourcesCompat;
+
+public class AddEditActivity extends AppCompatActivity {
+
+    // Объявление переменных для элементов пользовательского интерфейса и данных
+    EditText etNumber, etCount, etSpecifications;
+    Button saveBtn, delBtn;
+    String id, number, count, specifications;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_add_edit);
+
+        // Инициализация виджетов из макета activity_add_edit.xml
+        etNumber = findViewById(R.id.etNumber);
+        etCount = findViewById(R.id.etCount);
+        etSpecifications = findViewById(R.id.etSpecifications);
+        saveBtn = findViewById(R.id.saveBtn);
+        delBtn = findViewById(R.id.delBtn);
+        id = getIntent().getStringExtra(getString(R.string.c_id)); // Получение ID записи, если он передан
+        Typeface customFont = ResourcesCompat.getFont(this, R.font.droid_sans_bold); // Получение шрифта из ресурсов
+
+        ActionBar ab = getSupportActionBar();
+        if (getIntent().hasExtra(getString(R.string.c_id))) {
+            // Если передан ID, значит, режим редактирования, меняем заголовок экрана
+            ab.setTitle(R.string.editing);
+            delBtn.setVisibility(View.VISIBLE); // Показываем кнопку удаления
+            getAndSetIntentData(); // Заполняем поля данными для редактирования
+        } else {
+            // Режим добавления новой записи, меняем заголовок экрана
+            ab.setTitle(R.string.adding);
+            delBtn.setVisibility(View.INVISIBLE); // Скрываем кнопку удаления
+        }
+
+        saveBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Извлечение данных из полей ввода
+                String number = etNumber.getText().toString().trim();
+                String count = etCount.getText().toString().trim();
+                String specifications = etSpecifications.getText().toString().trim();
+
+                if (number.isEmpty() || count.isEmpty() || specifications.isEmpty()) {
+                    // Проверка наличия пустых полей
+                    // Показываем предупреждение, если хотя бы одно поле пусто
+                    Toast.makeText(AddEditActivity.this, R.string.warning, Toast.LENGTH_SHORT).show();
+                } else {
+                    DBHelper dbh = new DBHelper(AddEditActivity.this);
+
+                    if (getIntent().hasExtra(getString(R.string.c_id))) {
+                        // Если передан ID, режим редактирования, выполняем редактирование в базе данных
+                        id = getIntent().getStringExtra(getString(R.string.c_id));
+                        dbh.editData(id, number, count, specifications);
+                    } else {
+                        // Иначе, режим добавления новой записи, выполняем добавление в базу данных
+                        dbh.addNote(number, count, specifications);
+                    }
+
+                    setResult(1, null); // Устанавливаем код результата
+                    finish(); // Завершаем активность
+                }
+            }
+        });
+
+        delBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (getIntent().hasExtra(getString(R.string.c_id))) {
+                    // Если передан ID, режим редактирования, пытаемся удалить запись
+                    String nid = id;
+                    AlertDialog.Builder builder = new AlertDialog.Builder(AddEditActivity.this);
+                    builder.setTitle(R.string.deleting)
+                            .setMessage(R.string.delete_note)
+                            .setIcon(R.drawable.delall)
+                            .setCancelable(true)
+                            .setNegativeButton(R.string.cancel,
+                                    new DialogInterface.OnClickListener() {
+                                        public void onClick(DialogInterface dialog, int id) {
+                                            dialog.cancel();
+                                        }
+                                    })
+                            .setPositiveButton(R.string.ok,
+                                    new DialogInterface.OnClickListener() {
+                                        public void onClick(DialogInterface dialog, int id) {
+                                            DBHelper dbh = new DBHelper(AddEditActivity.this);
+                                            dbh.delOneNote(nid); // Удаляем запись
+                                            dialog.cancel();
+                                            setResult(1, null); // Устанавливаем код результата
+                                            finish(); // Завершаем активность
+                                        }
+                                    });
+                    AlertDialog alert = builder.create();
+                    alert.show();
+                }
+            }
+        });
+    }
+
+
+    // Метод для получения и заполнения полей данными для редактирования
+    void getAndSetIntentData() {
+        if (getIntent().hasExtra(getString(R.string.c_id))) {
+            id = getIntent().getStringExtra(getString(R.string.c_id));
+            number = getIntent().getStringExtra(getString(R.string.c_number));
+            count = getIntent().getStringExtra(getString(R.string.c_count));
+            specifications = getIntent().getStringExtra(getString(R.string.c_specifications));
+
+            // Заполняем поля данными для редактирования
+            etNumber.setText(number);
+            etCount.setText(count);
+            etSpecifications.setText(specifications);
+        } else {
+            // Иначе, выводим сообщение об ошибке (ID должен быть обязательно передан для режима редактирования записи)
+            Toast.makeText(this, R.string.error, Toast.LENGTH_SHORT).show();
+        }
+    }
+}
+
+Листинг CustomAdapter.Java:
+package com.ComputerRegistry;
+
+import android.app.Activity;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageButton;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
+import androidx.recyclerview.widget.RecyclerView;
+import java.util.ArrayList;
+
+
+public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHolder>{
+
+
+    private Activity activity;
+    private Context context;
+    private ArrayList computer_id, computer_number, computer_count, computer_specifications;
+
+    CustomAdapter(Activity activity, Context context, ArrayList computer_id, ArrayList computer_number, ArrayList computer_count, ArrayList computer_specifications){
+        //структура адаптера включает списки, каждый из которых является колонкой в таблице БД
+        this.activity = activity;
+        this.context = context;
+        this.computer_id = computer_id;
+        this.computer_number = computer_number;
+        this.computer_count = computer_count;
+        this.computer_specifications = computer_specifications;
+    }
+
+    @NonNull
+    @Override
+    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType){
+        //построитель представления на основе макета my_row закрепляет
+        //макет my_row со всем его содержимым с представлением view для работы адаптера как класса с ним
+        LayoutInflater inflater = LayoutInflater.from(context);
+        View view = inflater.inflate(R.layout.my_row, parent, false);
+        //функция возвращает экземпляр, управляющий указанным представлением
+        return new MyViewHolder(view);
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull final MyViewHolder holder, final int position) {
+        //метод присваивает тексту каждого объекта кода (адаптера) значение элемента списка по его позиции
+        //идентификатор:
+        holder.computer_id_txt.setText("");
+        holder.computer_n_txt.setText(String.valueOf(holder.getAdapterPosition()+1));
+        holder.computer_number_txt.setText(activity.getString(R.string.number)+String.valueOf(computer_number.get(holder.getAdapterPosition())));
+        holder.computer_count_txt.setText(activity.getString(R.string.count)+String.valueOf(computer_count.get(holder.getAdapterPosition())));
+        holder.computer_specifications_txt.setText(activity.getString(R.string.specifications)+String.valueOf(computer_specifications.get(holder.getAdapterPosition())));
+        holder.mainLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //обработка нажатия на элемент списка, при нажатии:
+                //создается новое намерение для текущего контекста и класса AddEditActivity
+                Intent intent = new Intent(context,AddEditActivity.class);
+                //передаем новому намерению значения переменных
+                intent.putExtra(activity.getString(R.string.c_id),String.valueOf(computer_id.get(holder.getAdapterPosition())));
+                intent.putExtra(activity.getString(R.string.c_number),String.valueOf(computer_number.get(holder.getAdapterPosition())));
+                intent.putExtra(activity.getString(R.string.c_count),String.valueOf(computer_count.get(holder.getAdapterPosition())));
+                intent.putExtra(activity.getString(R.string.c_specifications),String.valueOf(computer_specifications.get(holder.getAdapterPosition())));
+                //запускаем указанную активность AddEditActivity для изменения записи с ожиданием
+                //кода результата от нее
+                activity.startActivityForResult(intent, 1);
+            }
+        });
+    }
+
+    @Override
+    public int getItemCount() {
+        return computer_id.size();
+    }
+
+    class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+        TextView computer_id_txt, computer_n_txt, computer_number_txt, computer_count_txt, computer_specifications_txt;
+        ImageButton btnDelRV;
+        LinearLayout mainLayout;
+        MyViewHolder(@NonNull View itemView) {
+            //каждому объекту представления в адаптере присваивается
+            //виджет указанного ранее макета (my_row.xml) по его идентификатору
+            super(itemView);
+            computer_id_txt = itemView.findViewById(R.id.computer_id_txt);
+            computer_n_txt = itemView.findViewById(R.id.computer_n_txt);
+            computer_number_txt = itemView.findViewById(R.id.computer_number_txt);
+            computer_count_txt = itemView.findViewById(R.id.computer_count_txt);
+            computer_specifications_txt = itemView.findViewById(R.id.computer_specifications_txt);
+            mainLayout = itemView.findViewById(R.id.mainLayout);
+            btnDelRV = itemView.findViewById(R.id.delBtnRV);
+            //дополнительно, для кнопки с изображением (ImageButton) назначается "функция-слушатель" нажатия,
+            //обработчик которой ниже
+            btnDelRV.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View view) {
+            AlertDialog.Builder builder = new AlertDialog.Builder(activity);
+            builder.setTitle(R.string.deleting)
+                    .setMessage(R.string.delete_note)
+                    .setIcon(R.drawable.delall)
+                    .setCancelable(true)
+                    .setNegativeButton(R.string.cancel,
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+                                    dialog.cancel();
+                                }
+                            })
+                    .setPositiveButton(R.string.ok,
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+                                    DBHelper dbh = new DBHelper(activity);
+                                    //определяем текущую позицию записи из адаптера
+                                    int itemPos = getAdapterPosition();
+                                    //идентификатор заметки определяем по позиции элемента списка registry_id
+                                    String nid = computer_id.get(itemPos).toString();
+                                    //удаляем заметку по ее идентификатору
+                                    dbh.delOneNote(nid);
+                                    //пересоздаем главную активность, при этом
+                                    //полностью обновляется главный список с записями
+                                    activity.recreate();
+                                    //закрываем диалог
+                                    dialog.cancel();
+                                }
+                            });
+            AlertDialog alert = builder.create();
+            alert.show();
+        }
+    }
+}
+
+Листинг DBHelper.Java:
+package com.ComputerRegistry;
+
+import android.content.ContentValues;
+import android.content.Context;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
+import android.widget.Toast;
+import androidx.annotation.Nullable;
+
+
+public class DBHelper extends SQLiteOpenHelper {
+    private Context context;
+
+    private static final String DB_NAME = "ComputerRegistry.db";
+    private static final int DB_VERSION = 1;
+    private static final String TBL_NAME = "tblCompReg";
+    private static final String C_ID = "id";
+    private static final String C_NUMBER = "number";
+    private static final String C_COUNT = "count";
+    private static final String C_SPECIFICATIONS = "specifications";
+
+    // Конструктор класса DBHelper принимает контекст приложения и инициализирует базу данных.
+    public DBHelper(@Nullable Context context) {
+        // Указываем имя базы данных, версию и название базы данных в конструкторе.
+        super(context, DB_NAME, null, DB_VERSION);
+        this.context = context;
+    }
+
+    // Метод onCreate вызывается при создании базы данных. Здесь определяется структура таблицы.
+    @Override
+    public void onCreate(SQLiteDatabase db) {
+        // Создаем новую таблицу с названием TBL_NAME и задаем структуру таблицы.
+        String Query = "CREATE TABLE " + TBL_NAME + "( " +
+                C_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                C_NUMBER + " INTEGER, " +
+                C_COUNT + " INTEGER, " +
+                C_SPECIFICATIONS + " TEXT); " ;
+        db.execSQL(Query);
+    }
+
+    // Метод onUpgrade вызывается при обновлении базы данных (изменении версии).
+    @Override
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        // Удаляем существующую таблицу, если она существует.
+        db.execSQL("DROP TABLE IF EXISTS " + TBL_NAME + ";");
+        // Затем создаем новую таблицу с помощью метода onCreate.
+        onCreate(db);
+    }
+
+    // Метод для добавления новой записи в таблицу.
+    void addNote(String number, String count, String specifications) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+        cv.put(C_NUMBER, number);
+        cv.put(C_COUNT, count);
+        cv.put(C_SPECIFICATIONS, specifications);
+        long res = db.insert(TBL_NAME, null, cv);
+        if (res == -1) {
+            // Выводим сообщение об ошибке в случае неудачного добавления.
+            Toast.makeText(context, R.string.error_add, Toast.LENGTH_SHORT).show();
+        } else {
+            // Выводим сообщение об успешном добавлении.
+            Toast.makeText(context, R.string.success_add, Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    Cursor loadData() {
+        //Запрос SQL для выборки всех заметок и сортировки их по столбцам C_NUMBER и C_COUNT
+        String Query = "SELECT " + C_ID + "," + C_NUMBER + "," + C_COUNT + "," + C_SPECIFICATIONS + " FROM " + TBL_NAME + " ORDER BY " + C_NUMBER + "," + C_COUNT + " COLLATE NOCASE;";
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = null;
+        if (db != null) {
+            // Выполняем SQL-запрос и получаем результат в виде Cursor.
+            cursor = db.rawQuery(Query, null);
+        }
+        // Возвращаем Cursor, содержащий результат запроса.
+        return cursor;
+    }
+
+    // Метод editData используется для редактирования записи по ее ID.
+    void editData(String id, String number, String count, String specifications) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+        cv.put(C_NUMBER, number);
+        cv.put(C_COUNT, count);
+        cv.put(C_SPECIFICATIONS, specifications);
+        long result = db.update(TBL_NAME, cv, C_ID + "=?", new String[]{id});
+        if (result == -1) {
+            // Выводим сообщение об ошибке в случае неудачного редактирования.
+            Toast.makeText(context, R.string.error_edit, Toast.LENGTH_SHORT).show();
+        } else {
+            // Выводим сообщение об успешном редактировании.
+            Toast.makeText(context, R.string.success_edit, Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    // Метод delOneNote используется для удаления одной записи по ее ID.
+    void delOneNote(String id) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        long result = db.delete(TBL_NAME, C_ID + "=?", new String[]{id});
+        if (result == -1) {
+            // Выводим сообщение об ошибке в случае неудачного удаления.
+            Toast.makeText(context, R.string.error_delete, Toast.LENGTH_SHORT).show();
+        } else {
+            // Выводим сообщение об успешном удалении.
+            Toast.makeText(context, R.string.success_delete, Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    // Метод delAllNotes используется для удаления всех записей из таблицы.
+    void delAllNotes() {
+        SQLiteDatabase db = this.getWritableDatabase();
+        long result = db.delete(TBL_NAME, "", new String[]{});
+        if (result == -1) {
+            // Выводим сообщение об ошибке в случае неудачного удаления всех записей.
+            Toast.makeText(context, R.string.error_delete, Toast.LENGTH_SHORT).show();
+        } else {
+            // Выводим сообщение об успешном удалении всех записей.
+            Toast.makeText(context, R.string.success_delete_all, Toast.LENGTH_SHORT).show();
+        }
+    }
+}
+
+Листинг MainActivity.Java:
+package com.ComputerRegistry;
+
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.database.Cursor;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Toast;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import java.util.ArrayList;
+
+public class MainActivity extends AppCompatActivity {
+    // Определение переменных
+    RecyclerView mainList; // Отображение списка записей
+    FloatingActionButton AddBtn, DelAllBtn; // Кнопки "Добавить" и "Удалить все"
+    DBHelper DBH; // Помощник для работы с базой данных
+    ArrayList<String> n_id, n_number, n_count, n_specifications; // Списки для хранения данных записей
+    CustomAdapter customAdapter; // Адаптер для RecyclerView
+
+    ActivityResultLauncher<Intent> addEditActivityLauncher = registerForActivityResult(
+            new ActivityResultContracts.StartActivityForResult(),
+            new ActivityResultCallback<ActivityResult>() {
+                @Override
+                public void onActivityResult(ActivityResult result) {
+                    // При возврате из AddEditActivity обновляем список записей
+                    mainListUpdate();
+                }
+            }
+    );
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        // Инициализация интерфейса
+        mainList = findViewById(R.id.MainList);
+        AddBtn = findViewById(R.id.AddBtn);
+        DelAllBtn = findViewById(R.id.DelAllBtn);
+
+        // Обработчик нажатия на кнопку "Добавить"
+        AddBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Создаем намерение (Intent) для запуска активности AddEditActivity для добавления новой записи
+                Intent intent = new Intent(MainActivity.this, AddEditActivity.class);
+                addEditActivityLauncher.launch(intent);
+            }
+        });
+
+        // Обработчик нажатия на кнопку "Удалить все"
+        DelAllBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (customAdapter.getItemCount() > 0) {
+                    // Если в адаптере есть хотя бы один элемент, создаем диалоговое окно с запросом на удаление всех записей
+                    AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+                    builder.setTitle(R.string.deleting)
+                            .setMessage(R.string.delete_all_notes)
+                            .setIcon(R.drawable.delall)
+                            .setCancelable(true)
+                            .setNegativeButton(R.string.no,
+                                    new DialogInterface.OnClickListener() {
+                                        public void onClick(DialogInterface dialog, int id) {
+                                            // Закрываем диалог
+                                            dialog.cancel();
+                                        }
+                                    })
+                            .setPositiveButton(R.string.yes,
+                                    new DialogInterface.OnClickListener() {
+                                        public void onClick(DialogInterface dialog, int id) {
+                                            // Создаем экземпляр класса DBHelper
+                                            DBH = new DBHelper(MainActivity.this);
+                                            // Вызываем метод для удаления всех записей из БД
+                                            DBH.delAllNotes();
+                                            // Обновляем список
+                                            mainListUpdate();
+                                            // Закрываем диалог
+                                            dialog.cancel();
+                                        }
+                                    });
+                    AlertDialog alert = builder.create();
+                    // Конфигурируем и отображаем диалог
+                    alert.show();
+                }
+            }
+        });
+
+        // Инициализация DBHelper и списков
+        DBH = new DBHelper(MainActivity.this);
+        n_id = new ArrayList<>();
+        n_number = new ArrayList<>();
+        n_count = new ArrayList<>();
+        n_specifications = new ArrayList<>();
+
+        // Заполняем списки данными из базы данных
+        fillArrays();
+
+        // Устанавливаем адаптер для RecyclerView
+        customAdapter = new CustomAdapter(MainActivity.this, this, n_id, n_number, n_count, n_specifications);
+        mainList.setAdapter(customAdapter);
+
+        // Устанавливаем линейный слой для mainList в макете главной активности
+        mainList.setLayoutManager(new LinearLayoutManager(MainActivity.this));
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 1) {
+            // Если код результата (возврата) от активности равен 1, обновляем главный список
+            mainListUpdate();
+        }
+    }
+
+    // Метод для обновления главного списка
+    void mainListUpdate() {
+        fillArrays();
+        mainList.setAdapter(customAdapter);
+    }
+
+    // Метод для заполнения списков данными из базы данных
+    void fillArrays() {
+        Cursor cursor = DBH.loadData();
+        n_id.clear();
+        n_number.clear();
+        n_count.clear();
+        n_specifications.clear();
+        if (cursor.getCount() == 0) {
+            Toast.makeText(this, R.string.no_notes, Toast.LENGTH_SHORT).show();
+        } else {
+            while (cursor.moveToNext()) {
+                // Заполняем списки данными из курсора
+                n_id.add(cursor.getString(0));
+                n_number.add(cursor.getString(1));
+                n_count.add(cursor.getString(2));
+                n_specifications.add(cursor.getString(3));
+            }
+        }
+    }
+}
