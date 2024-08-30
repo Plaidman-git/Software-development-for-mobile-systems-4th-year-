@@ -1,0 +1,440 @@
+Листинг файла манифеста проекта:
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:usesCleartextTraffic="true"
+        android:theme="@style/Theme.Converter"
+        tools:targetApi="31">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
+Листинг файла строковых констант strings.xml:
+<resources>
+    <string name="app_name">converter</string>
+    <string name="title">Перевод числа в другую систему счисления</string>
+    <string name="text1">Введите число в десятичной системе счисления</string>
+    <string name="text2">Выберите систему счисления для перевода</string>
+    <string name="result">Перевести</string>
+    <string name="error_input_number">Введите число</string>
+    <string name="error_correct_number">Введены некорректные данные</string>
+    <string name="error_no_key">Не удалось получить результат</string>
+    <string name="error_no_jsonobj">Не удалось обработать ответ сервера</string>
+    <string name="error_no_internet">Нет подключения к интернету</string>
+    <string name="URL">https://worldlab.technolog.edu.ru/stud/g8/srv.php</string>
+</resources>
+Листинг файла цветовых констант colors.xml:
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="ser">#FFC0C0C0</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="grey">#FF808080</color>
+    <color name="siren">#7893AD</color>
+    <color name="fiol">#9BBBDA</color>
+    <color name="purp">#405F7E</color>
+    <color name="svet_myat">#FF86CABB </color>
+    <color name="myat">#FF62A193</color>
+    <color name="tem_myat">#FF3B7568 </color>
+    <color name="roz">#FFCB4335 </color>
+    <color name="orange">#FFF39C12 </color>
+</resources>
+Темы оформления:
+Листинг файла светлой темы:
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.Converter" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/fiol</item>
+        <item name="colorPrimaryVariant">@color/siren</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/purp</item>
+        <item name="colorSecondaryVariant">@color/fiol</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+    </style>
+
+</resources>
+Листинг файла темной темы:
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.Converter" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">#4986A6</item>
+        <item name="colorPrimaryVariant">#799DB1</item>
+        <item name="colorOnPrimary">@color/black</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">#7A9EB1</item>
+        <item name="colorSecondaryVariant">#0288D1</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">#759AAE</item>
+    </style>
+</resources>
+3.	Разметка макетов графических интерфейсов
+activity_main.xml:
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/num"
+        android:layout_width="204dp"
+        android:layout_height="54dp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginBottom="8dp"
+        android:cursorVisible="true"
+        android:ems="10"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center"
+        android:inputType="numberSigned|numberDecimal"
+        android:textColor="@color/fiol"
+        android:textSize="30dp"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.132"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.475" />
+
+    <EditText
+        android:id="@+id/result"
+        android:layout_width="220dp"
+        android:layout_height="69dp"
+        android:layout_gravity="center_vertical"
+        android:cursorVisible="true"
+        android:ems="10"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center"
+        android:inputType="numberSigned|numberDecimal"
+        android:textColor="@color/fiol"
+        android:textSize="24dp"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.499"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.953" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="670dp"
+        android:layout_height="67dp"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center"
+        android:text="@string/title"
+        android:textColor="@color/purp"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.024" />
+
+    <Spinner
+        android:id="@+id/conversionSpinner"
+        android:layout_width="339dp"
+        android:layout_height="56dp"
+        android:gravity="center"
+        android:textSize="20dp"
+        android:theme="@style/SpinnerStyle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.498"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="350dp"
+        android:layout_height="75dp"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center"
+        android:text="@string/text1"
+        android:textColor="@color/siren"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.241" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="350dp"
+        android:layout_height="75dp"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center"
+        android:text="@string/text2"
+        android:textColor="@color/siren"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.241" />
+
+    <Button
+        android:id="@+id/convertButton"
+        android:layout_width="664dp"
+        android:layout_height="66dp"
+        android:layout_marginBottom="4dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="@string/result"
+        android:textSize="28dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.767" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+Листинг activity_main.xml:
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <WebView
+        android:id="@+id/MainWV"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+Листинг MainActivity.Java
+package com.exapmle.converter_srv;
+
+import android.annotation.SuppressLint;
+import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+import android.os.AsyncTask;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Spinner;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.MalformedURLException;
+import java.net.URL;
+
+import javax.net.ssl.HttpsURLConnection;
+
+public class MainActivity extends AppCompatActivity {
+
+    private static final String RESULT_KEY = "result_key";
+
+    private EditText numEditText;
+    private TextView resultTextView;
+    private Spinner conversionSpinner;
+    private String result;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        numEditText = findViewById(R.id.num);
+        resultTextView = findViewById(R.id.result);
+        conversionSpinner = findViewById(R.id.conversionSpinner);
+
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
+                this,
+                R.array.conversion_options,
+                android.R.layout.simple_spinner_item
+        );
+
+        conversionSpinner.setAdapter(adapter);
+
+        conversionSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
+                String selectedSystem = getResources().getStringArray(R.array.conversion_options)[position];
+                // Передаем выбранную систему в convertNumber
+                convertNumber(selectedSystem);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parentView) {
+            }
+        });
+
+        @SuppressLint({"MissingInflatedId", "LocalSuppress"}) Button convertButton = findViewById(R.id.convertButton);
+
+        convertButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String selectedSystem = conversionSpinner.getSelectedItem().toString();
+                // Проверяем подключение к интернету
+                if (!isNetworkConnected()) {
+                    showNoInternetNotification();
+                    return;
+                }
+                convertNumber(selectedSystem);
+            }
+        });
+
+        if (savedInstanceState != null) {
+            result = savedInstanceState.getString(RESULT_KEY);
+            resultTextView.setText(result);
+        }
+    }
+
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putString(RESULT_KEY, result);
+    }
+
+    private void convertNumber(String selectedSystem) {
+        String inputNumberStr = numEditText.getText().toString();
+
+        if (inputNumberStr.isEmpty()) {
+            Toast toast = Toast.makeText(getApplicationContext(), R.string.error_input_number, Toast.LENGTH_SHORT);
+            toast.show();
+            return;
+        }
+
+        if (!isNumeric(inputNumberStr)) {
+            Toast toast = Toast.makeText(getApplicationContext(), R.string.error_correct_number, Toast.LENGTH_SHORT);
+            toast.show();
+            return;
+        }
+
+        int inputNumber = Integer.parseInt(inputNumberStr);
+
+        // Передаем выбранную систему напрямую в AsyncTask
+        new ConversionTask().execute(selectedSystem, String.valueOf(inputNumber));
+    }
+
+    private boolean isNumeric(String str) {
+        try {
+            Double.parseDouble(str);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
+    }
+
+    private class ConversionTask extends AsyncTask<String, Void, String> {
+
+        @Override
+        protected String doInBackground(String... params) {
+            String selectedSystem = params[0];
+            String inputNumber = params[1];
+            String request = "";
+
+            try {
+                URL url = new URL(getString(R.string.URL) + "?inputNumber=" + inputNumber + "&selectedSystem=" + selectedSystem);
+                HttpsURLConnection connection = (HttpsURLConnection) url.openConnection();
+                connection.connect();
+
+                InputStream stream = connection.getInputStream();
+                BufferedReader reader = new BufferedReader(new InputStreamReader(stream));
+
+                String line;
+                while ((line = reader.readLine()) != null) {
+                    request += line;
+                }
+
+                stream.close();
+                reader.close();
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+                request = "MalformedURLException: " + e.getMessage();
+            } catch (IOException e) {
+                e.printStackTrace();
+                request = "IOException: " + e.getMessage();
+            }
+
+            return request;
+        }
+
+        @Override
+        protected void onPostExecute(String result) {
+            try {
+                JSONObject jObject = new JSONObject(result);
+
+                if (jObject.has("mes")) {
+                    resultTextView.setText(jObject.getString("mes"));
+                } else {
+                    Toast toast = Toast.makeText(getApplicationContext(), R.string.error_no_key, Toast.LENGTH_SHORT);
+                    toast.show();
+                }
+            } catch (JSONException e) {
+                e.printStackTrace();
+                Toast toast = Toast.makeText(getApplicationContext(), R.string.error_no_jsonobj, Toast.LENGTH_SHORT);
+                toast.show();
+            }
+        }
+    }
+    private boolean isNetworkConnected() {
+        ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
+        return activeNetwork != null && activeNetwork.isConnectedOrConnecting();
+    }
+
+    private void showNoInternetNotification() {
+        Toast.makeText(getApplicationContext(), R.string.error_no_internet, Toast.LENGTH_SHORT).show();
+    }
+}
