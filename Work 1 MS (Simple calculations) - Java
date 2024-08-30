@@ -1,0 +1,319 @@
+•	Листинг colors.xml
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="ser">#FFC0C0C0</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="grey">#FF808080</color>
+    <color name="siren">#7893AD</color>
+    <color name="fiol">#9BBBDA</color>
+    <color name="purp">#405F7E</color>
+    <color name="svet_myat">#FF86CABB </color>
+    <color name="myat">#FF62A193</color>
+    <color name="tem_myat">#FF3B7568 </color>
+    <color name="roz">#FFCB4335 </color>
+    <color name="orange">#FFF39C12 </color>
+</resources>
+•	Листинг strings.xml
+<resources>
+    <string name="app_name">converter</string>
+    <string name="title">Перевод числа в другую систему счисления</string>
+    <string name="text1">Введите число в десятичной системе счисления</string>
+    <string name="text2">Выберите систему счисления для перевода</string>
+    <string name="result">Перевести</string>
+    <string name="error1">Введите число</string>
+    <string name="error2">Введены некорректные данные</string>
+</resources>
+
+•	Листинг файла светлой темы themes.xml
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.Converter" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/fiol</item>
+        <item name="colorPrimaryVariant">@color/siren</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/purp</item>
+        <item name="colorSecondaryVariant">@color/fiol</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+    </style>
+</resources>
+•	Листинг файла темной темы themes.xml
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.Converter" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">#4986A6</item>
+        <item name="colorPrimaryVariant">#799DB1</item>
+        <item name="colorOnPrimary">@color/black</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">#7A9EB1</item>
+        <item name="colorSecondaryVariant">#0288D1</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">#759AAE</item>
+    </style>
+</resources>
+•	Листинг activity_main.xml
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+    <EditText
+        android:id="@+id/num"
+        android:layout_width="204dp"
+        android:layout_height="54dp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginBottom="8dp"
+        android:cursorVisible="true"
+        android:ems="10"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center"
+        android:inputType="numberSigned|numberDecimal"
+        android:textColor="@color/fiol"
+        android:textSize="34dp"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.458"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.313" />
+    <EditText
+        android:id="@+id/result"
+        android:layout_width="220dp"
+        android:layout_height="69dp"
+        android:layout_gravity="center_vertical"
+        android:cursorVisible="true"
+        android:ems="10"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center"
+        android:inputType="numberSigned|numberDecimal"
+        android:textColor="@color/fiol"
+        android:textSize="34dp"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.871" />
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="350dp"
+        android:layout_height="80dp"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center"
+        android:text="@string/title"
+        android:textColor="@color/purp"
+        android:textSize="28dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.024" />
+    <Spinner
+        android:id="@+id/conversionSpinner"
+        android:layout_width="339dp"
+        android:layout_height="56dp"
+        android:gravity="center"
+        android:textSize="20dp"
+        android:theme="@style/SpinnerStyle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.569"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.591"
+        tools:ignore="MissingConstraints" />
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="350dp"
+        android:layout_height="75dp"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center"
+        android:text="@string/text1"
+        android:textColor="@color/siren"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.167" />
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="337dp"
+        android:layout_height="51dp"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center"
+        android:text="@string/text2"
+        android:textColor="@color/siren"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.43" />
+    <Button
+        android:id="@+id/convertButton"
+        android:layout_width="403dp"
+        android:layout_height="83dp"
+        android:layout_marginBottom="4dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="@string/result"
+        android:textSize="28dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.767" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+Листинг MainActivity.java.
+package com.exapmle.converter;
+
+import android.annotation.SuppressLint;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Spinner;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
+public class MainActivity extends AppCompatActivity {
+
+    private static final String RESULT_KEY = "result_key";
+
+    private EditText numEditText;
+    private TextView resultTextView;
+    private Spinner conversionSpinner;
+    private String result;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        // Получение ссылок на элементы интерфейса
+        numEditText = findViewById(R.id.num);
+        resultTextView = findViewById(R.id.result);
+        conversionSpinner = findViewById(R.id.conversionSpinner);
+
+        // Создание адаптера из строковых ресурсов
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
+                this,
+                R.array.conversion_options,
+                android.R.layout.simple_spinner_item
+        );
+
+        // Установка адаптера для Spinner
+        conversionSpinner.setAdapter(adapter);
+
+        // Обработчик выбора в Spinner
+        conversionSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
+                // Получение выбранной строки из Spinner
+                String selectedSystem = getResources().getStringArray(R.array.conversion_options)[position];
+                  }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parentView) {
+                // Обработка отсутствия выбора
+            }
+        });
+
+        // Получение ссылки на кнопку
+        @SuppressLint({"MissingInflatedId", "LocalSuppress"}) Button convertButton = findViewById(R.id.convertButton);
+
+        // Установка обработчика нажатия на кнопку
+        convertButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Получение выбранной системы
+                String selectedSystem = conversionSpinner.getSelectedItem().toString();
+                // Вызов метода для конвертации и отображения результата
+                convertNumber(selectedSystem);
+            }
+        });
+
+        if (savedInstanceState != null) {
+            // Восстановление результата после пересоздания активности
+            result = savedInstanceState.getString(RESULT_KEY);
+            resultTextView.setText(result);
+        }
+    }
+
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+
+        // Сохранение результата перед пересозданием активности
+        outState.putString(RESULT_KEY, result);
+    }
+
+    private void convertNumber(String selectedSystem) {
+        // Получение введенного числа
+        String inputNumberStr = numEditText.getText().toString();
+
+        // Проверка, чтобы избежать ошибок при пустом вводе
+        if (inputNumberStr.isEmpty()) {
+            Toast toast = Toast.makeText(getApplicationContext(), R.string.error1, Toast.LENGTH_SHORT);
+            toast.show();
+            return;
+        }
+        // Проверка на заполнение значений координат и то, что они являются числами
+        if (!isNumeric(inputNumberStr)) {
+            Toast toast = Toast.makeText(getApplicationContext(), R.string.error2, Toast.LENGTH_SHORT);
+            toast.show();
+            return;
+        }
+        // Парсинг введенного числа
+        int inputNumber = Integer.parseInt(inputNumberStr);
+
+        // Логика перевода числа в соответствующую систему
+        switch (selectedSystem) {
+            case "Двоичная":
+                result = Integer.toBinaryString(inputNumber);
+                break;
+            case "Восьмеричная":
+                result = Integer.toOctalString(inputNumber);
+                break;
+            case "Шестнадцатеричная":
+                result = Integer.toHexString(inputNumber);
+                break;
+            default:
+                result = "Неверная система";
+        }
+
+        // Установка результата в TextView
+        resultTextView.setText(result);
+    }
+
+    private boolean isNumeric(String str) {
+        try {
+            Double.parseDouble(str);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
+    }
+}
